@@ -2,73 +2,71 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="theme.css" type="text/css"> </head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+          type="text/css">
+    <link rel="stylesheet" href="theme.css" type="text/css">
+</head>
 
 <body>
-  <div class="py-5 bg-primary text-white">
+<div class="py-5 bg-primary text-white">
     <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <img class="d-block img-fluid my-3" src="D:\11624852_203530284000_2.jpg"> </div>
-        <div class="col-md-6">
-          <h1>Some Text here</h1>
-          <p>For Testing&nbsp;</p>
-          <div class="btn-group">
-            <button class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown"> Dropdown </button>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Action</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Separated link</a>
+        <div class="row">
+            <div class="col-md-6">
+                <img class="d-block img-fluid my-3" src=""></div>
+            <div class="col-md-6">
+                <h1>Register Page</h1>
+                <p>Welcome To xxxx.com&nbsp;</p>
+                <br>
+                <form>
+                    <div class="form-group">
+                        <label for="username">Register Username</label>
+                        <input type="text" class="form-control" id="username" placeholder="Enter Your Username">
+                    </div>
+                    <div class="form-group">
+                        <label>Sex</label>
+                        <div class="form-group my-3" id="sex">
+                            <select class="form-control">
+                                <option value="Female">Female</option>
+                                <option value="Male">Male</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Label2</label>
+                        <input type="password" class="form-control" id="password" placeholder="Enter Your Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="password2">Label3</label>
+                        <input type="password" class="form-control" id="password2"
+                               placeholder="Confirm Your Password Again"></div>
+                    <div class="form-group">
+                        <label for="email">Label4</label>
+                        <input type="text" class="form-control" id="email" placeholder="Enter Your E-mail"></div>
+                    <button type="submit" class="btn btn-secondary my-2" onclick="addUser()">Submit!!</button>
+                    <button type="reset" class="btn btn-secondary my-2">Reset!!</button>
+                </form>
             </div>
-          </div>
-          <form>
-            <div class="form-group">
-              <label for="InputName1">Label1
-                <br> </label>
-              <input type="text" class="form-control" id="InputName1" placeholder="Your name"> </div>
-            <div class="form-group">
-              <label>Label2</label>
-              <br>
-              <div class="btn-group">
-                <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" weight="auto" length="auto"> Dropdown </button>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#">select1</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">select2</a>
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="InputEmail2">Label2</label>
-              <input type="email" class="form-control" id="InputEmail2" placeholder="Enter email"> </div>
-            <div class="form-group">
-              <label for="InputEmail3">Label3</label>
-              <input type="email" class="form-control" id="InputEmail3" placeholder="Enter email"> </div>
-            <div class="form-group">
-              <label for="InputEmail4">Label4</label>
-              <input type="email" class="form-control" id="InputEmail4" placeholder="Enter email"> </div>
-            <div class="form-group">
-              <label for="InputEmail5">Label5</label>
-              <input type="email" class="form-control" id="InputEmail5" placeholder="Enter email"> </div>
-            <div class="form-group">
-              <label for="Textarea">Write here</label>
-              <textarea class="form-control" id="Textarea" rows="3" placeholder="Type here"></textarea>
-            </div>
-            <button type="submit" class="btn btn-secondary">Submit</button>
-          </form>
         </div>
-      </div>
     </div>
-  </div>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <pingendo onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 10px;right:10px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:250px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">Made with Pingendo Free&nbsp;&nbsp;
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<pingendo onclick="window.open('https://pingendo.com/', '_blank')"
+          style="cursor:pointer;position: fixed;bottom: 10px;right:10px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:250px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">
+    Made with Pingendo Free&nbsp;&nbsp;
     <img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block" alt="Pingendo logo" height="16">
-  </pingendo>
+</pingendo>
 </body>
+
+<script type="text/javascript" src="../../js/my.js"></script>
 
 </html>

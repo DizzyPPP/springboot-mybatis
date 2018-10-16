@@ -1,5 +1,6 @@
 package com.ryu.service;
 
+import com.ryu.entities.User;
 import com.ryu.mapper.ArticleMapper;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -22,4 +23,5 @@ public class ArticleServiceImpl implements ArticleService{
         Integer num = articleMapper.addArticle(article);
         return num;
     }
+
 }

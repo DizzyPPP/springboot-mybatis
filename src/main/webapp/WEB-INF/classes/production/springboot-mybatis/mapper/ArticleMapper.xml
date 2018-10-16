@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ryu.mapper.ArticleMapper">
+
+    <resultMap id="AllColumnMap" type="com.ryu.entities.Article">
+        <result column="id" property="id"/>
+        <result column="title" property="title"/>
+        <result column="content" property="content"/>
+        <result column="create_time" property="createTime"/>
+        <result column="edit_time" property="editTime"/>
+    </resultMap>
+
+    <sql id="BaseColumn" >
+        id, title, content, create_time, edit_time
+    </sql>
+    
+    <select id="selectAll" resultMap="AllColumnMap">
+        SELECT
+        <include refid="BaseColumn" />
+        FROM article
+        LIMIT 1000 
+    </select>
+
+    <insert id="addArticle" >
+        insert into article(id, title, content, create_time, edit_time)
+        values (id, title, content, createTime, editTime)
+    </insert>
+
+</mapper>

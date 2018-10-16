@@ -1,10 +1,13 @@
 package com.ryu.controller;
 
 import com.ryu.entities.Article;
+import com.ryu.entities.User;
 import com.ryu.service.ArticleService;
+import com.ryu.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -29,6 +32,9 @@ public class ArticleController {
 
     @Autowired
     private ArticleService articleService;
+
+    @Autowired
+    private UserService userService;
 
     @RequestMapping("/jsp")
     public String ValidatePage(){
@@ -57,6 +63,18 @@ public class ArticleController {
             return INDEX;
         }else{
             model.addAttribute("error", "插入失败");
+            return INDEX;
+        }
+    }
+
+    @RequestMapping("/addUser")
+    public String addText(User user,Model model){
+        Integer a = userService.addUser(user);
+        if(a > 0){
+            model.addAttribute("msg", "插入成功");
+            return INDEX;
+        }else{
+            model.addAttribute("msg", "插入失败");
             return INDEX;
         }
     }
