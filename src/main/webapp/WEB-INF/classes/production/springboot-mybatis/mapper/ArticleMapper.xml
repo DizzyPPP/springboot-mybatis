@@ -23,7 +23,7 @@
 
     <insert id="addArticle" >
         insert into article(id, title, content, create_time, edit_time)
-        values (id, title, content, createTime, editTime)
+        values (#{id}, #{title}, #{content}, #{createTime}, #{editTime})
     </insert>
 
 </mapper>

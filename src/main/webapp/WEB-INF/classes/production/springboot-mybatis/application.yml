@@ -2,13 +2,13 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/spring_mybatis?useSSL=false
     driver-class-name: com.mysql.jdbc.Driver
-    username: root
-    password: 
-  resources:
-    static-locations: /WEB-INF/static
+    username:
+    password:
+#  resources:
+#    static-locations: /WEB-INF/static/
   mvc:
     view:
-      prefix: /WEB-INF/static
+      prefix: /WEB-INF/static/
       suffix: .html
   redis:
     database: 0
@@ -26,5 +26,5 @@ spring:
 mybatis:
   mapper-locations: classpath:/mapper/*Mapper.xml
 server:
-  port: 8080
+  port: 8900
 

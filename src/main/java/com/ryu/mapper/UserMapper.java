@@ -8,4 +8,6 @@ public interface UserMapper {
 
     Integer addUser(User user);
 
+    User login(String username,String password);
+
 }

@@ -9,10 +9,21 @@
         <result column="password" property="password" jdbcType="VARCHAR"/>
         <result column="email" property="email" jdbcType="VARCHAR"/>
     </resultMap>
-    
+
+    <sql id="BaseColumn">
+        id, username, sex, password, email
+    </sql>
+
     <insert id="addUser">
-        insert into USER (id, username, sex, password, email)
+        insert into User (id, username, sex, password, email)
         values (id, username, sex, password, email)
     </insert>
+
+    <select id="login" resultMap="BaseResult">
+        select
+        <include refid="BaseColumn" />
+        from User
+        where User.username = #{param1} and User.password = #{param2}
+    </select>
 
 </mapper>

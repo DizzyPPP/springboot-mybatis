@@ -9,8 +9,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
@@ -25,9 +28,9 @@ import java.util.logging.Logger;
 @Controller
 public class ArticleController {
 
-    private static final  String PAGE = "page";
-    private static final  String SUCCESS = "success";
+    private static final  String PAGE = "blank";
     public static final String INDEX = "index";
+    public static final String LOGIN = "login";
     private static Logger LOGGER = Logger.getLogger("ArticleController");
 
     @Autowired
@@ -39,13 +42,13 @@ public class ArticleController {
     @RequestMapping("/jsp")
     public String ValidatePage(){
         LOGGER.info("Method ValidatePage() running successful");
-        return SUCCESS ;
+        return PAGE ;
     }
 
     @RequestMapping("/html")
     public String htmlPage(){
         LOGGER.info("Method htmlPage() running successful");
-        return PAGE;
+        return LOGIN;
     }
 
     @RequestMapping("/getArticle")
@@ -57,25 +60,41 @@ public class ArticleController {
     }
 
     @RequestMapping("/addArticle")
-    public String addArticle(Article article, Model model){
+    public String addArticle(Article article, HttpServletRequest httpServletRequest){
         int a = articleService.addArticle(article);
+        User user = new User();
+        user.setUsername("aaa");
+        user.setPassword("aaa");
+        httpServletRequest.getSession().setAttribute("user",user);
         if(a > 0){
             return INDEX;
         }else{
-            model.addAttribute("error", "插入失败");
             return INDEX;
         }
     }
 
     @RequestMapping("/addUser")
-    public String addText(User user,Model model){
+    public String addText(@RequestBody User user,Model model){
         Integer a = userService.addUser(user);
         if(a > 0){
             model.addAttribute("msg", "插入成功");
-            return INDEX;
+            return LOGIN;
         }else{
             model.addAttribute("msg", "插入失败");
             return INDEX;
+        }
+    }
+
+    @RequestMapping("/login")
+    public String login(@RequestBody User user, HttpServletRequest servletRequest){
+        User loginUser = userService.Login(user.getUsername(),user.getPassword());
+        if(loginUser != null){
+            servletRequest.getSession().setAttribute("user", loginUser);
+            System.out.println("all finished");
+            return INDEX;
+        }else{
+            System.out.println("all failed");
+            return LOGIN;
         }
     }
 
